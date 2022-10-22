@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <!-- BS4.6 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <!-- Local  -->
+        <link rel="stylesheet" href="./src/index.css">
+        <script src="./src/calcRealAS.js"></script>
+        <title> TorchLight AS Helper </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1> Attack Speed Calcualtor </h1>
+        <div class="container">
+            <div class="box">
+                <div class="form">
+                    <div class="form-group">
+                        <label for="weaponBaseAS">Weapon Base AS</label>
+                        <select name="" id="was">
+                            <option selected> Choose your weapon base AS</option>
+                            <option value="1.10"> 1.10 </option>
+                            <option value="1.15"> 1.15 </option>
+                            <option value="1.20"> 1.20 </option>
+                            <option value="1.25"> 1.25 </option>
+                            <option value="1.30"> 1.30 </option>
+                            <option value="1.35"> 1.35 </option>
+                            <option value="1.40"> 1.40 </option>
+                            <option value="1.45"> 1.45 </option>
+                            <option value="1.50"> 1.50 </option>
+                            <option value="1.55"> 1.55 </option>
+                            <option value="1.60"> 1.60 </option>
+                        </select>
+                        <small id="weaponBaseASHelp" class="form-text text-muted"></small> 
+                    </div>
+                    <div class="form-group">
+                        <label for="lasr">Weapon AS Rate(Local)</label>
+                        <input type="value" class="form-control" id="lasr" placeholder="+x% gear attack speed(+x% 該裝備攻擊速度)">
+                        <label for="passiveMediumTalent">Passisve</label>
+                        <input type="value" class="form-control" id="pMT" placeholder="+x% weapon attack speed(+x% 武器攻擊速度)">
+                    </div>
+                    <div class="form-group">
+                        <label for="gasr">Global AS Rate</label>
+                        <input type="value" class="form-control" id="gasr" placeholder="+x% attack speed(+x% 攻擊速度)">
+                    </div>
+                    <div class="form-group">
+                        <label for="asMul">Other AS Multi. Sources</label>
+                        <input type="text" class="form-control" id="asMul" placeholder="1.1, 1.3, 1.1">
+                    </div>
+                    <hr>
+                    <div class="outputContainer"></div>
+                    <button type="submit" class="btn btn-primary mb-2" id="eqAS" style="float: right;">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
