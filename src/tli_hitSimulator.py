@@ -2,20 +2,22 @@ from audioop import avg
 import pdb
 import statistics
 
+# Hit Num Simulation 
 def simulation(config):
     tick_nums = int(config['simulation_time'] / config['server_tick_rate'])
     bkpt_nums = int(5/config['server_tick_rate'])
     dict = [0 for time in range(tick_nums)]
     hit_nums = int(config['simulation_time'] * config['as'])
-    # pdb.set_trace()
     for index in range(hit_nums):
         hit_time = index / config['as']
         tick_index = int(hit_time / config['server_tick_rate'])
         if tick_index >= len(dict):
             break
-        if dict[tick_index] <= 2:
-            dict[tick_index] = dict[tick_index] + 1
-        # dict[tick_index] = dict[tick_index] + 1
+        # Some Assumptions but they didn't work
+        # if dict[tick_index] <= 2:
+            # dict[tick_index] = dict[tick_index] + 1
+        dict[tick_index] = dict[tick_index] + 1
+
     # Calc the dps5
     dps5 = []
     isInit = False
@@ -28,6 +30,7 @@ def simulation(config):
         if bkpt_nums-1 is index:
             isInit = True
             dps5.append(temp_dps5)
+    
     avg_dps5 = sum(dps5)/len(dps5)
     mid_dps5 = statistics.median(dps5)
     print ('[-] Attack Speed: {}, AVG DPS(5): {}, MID DPS(5)'.format(config['as'], avg_dps5, mid_dps5))
